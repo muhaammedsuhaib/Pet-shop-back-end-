@@ -141,8 +141,7 @@ export const adminBlockUserById = async (req, res, next) => {
 export const adminUnBlockUserById = async (req, res, next) => {
     try {
         const { userId } = req.params;
-        console.log("afsfs",userId);
-
+        
         const userUnBlock = await User.findByIdAndUpdate({_id: userId}, {$set: {isDeleted: false}});
 
         if (!userUnBlock) {

@@ -28,7 +28,7 @@ const uploadImage = (req, res, next) => {
     if (error) {
       return next(error);
     }
-      console.log(req.file);
+    
     if (req.file) {
       try {
         const result = await cloudinary.v2.uploader.upload(req.file.path);

@@ -54,7 +54,7 @@ export const payment = async (req, res, next) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "https://example.com/success", // Replace with actual success URL
+      success_url: "http://localhost:3000/SuccessMessage", // Replace with actual success URL
       cancel_url: "https://example.com/cancel", // Replace with actual cancel URL
     });
 
@@ -77,6 +77,7 @@ export const payment = async (req, res, next) => {
       totalAmount,
       totalQuantity,
     });
+    
   } catch (error) {
     console.error("Error:", error);
     return next(error);

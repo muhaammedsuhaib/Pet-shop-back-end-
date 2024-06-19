@@ -11,7 +11,6 @@ export const createProducts = async (req, res, next) => {
     try {
         
         const result = await productJoi.validateAsync(req.body);
-     console.log(result);
         const newProduct = new Products({
             title: result.title,
             description: result.description,

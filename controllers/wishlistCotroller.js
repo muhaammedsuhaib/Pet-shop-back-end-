@@ -13,8 +13,6 @@ export const addWishlist = async (req, res, next) => {
   try {
     const userId = req.params.userId;
     const productId = req.params.id;
-    console.log(userId);
-    console.log(productId);
 
     // find user by id
     const user = await User.findById(userId);
@@ -92,8 +90,6 @@ export const viewWishlist = async (req, res, next) => {
 export const removeWishlist = async (req, res, next) => {
   try {
     const { userId, itemId } = req.params;
-    console.log(userId, itemId);
-
     // Find user by ID
     const user = await User.findById(userId);
     if (!user) {
@@ -107,7 +103,6 @@ export const removeWishlist = async (req, res, next) => {
 
     // Find product by ID
     const product = await Products.findById(itemId);
-    console.log(product);
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
     }
